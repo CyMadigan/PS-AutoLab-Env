@@ -12,7 +12,7 @@ Note: All scripts require WMF 5 or above, and to run from PowerShell using "Run 
 
 # Setup Path Variables
 $SourcePath = $PSScriptRoot
-$DestinationPath = "C:\AutoLab" #Default
+$DestinationPath = "E:\_AutoLab" #Default
 Clear-Host
 Write-Host -ForegroundColor Cyan -Object "The default installation path is $DestinationPath"
 $result = Read-Host "Would you like to change the default path? (y/n)"
@@ -63,7 +63,7 @@ Get-PackageSource -Name PSGallery | Set-PackageSource -Trusted -Force -ForceBoot
  If an older version is installed, update the version, otherwise install the latest version.
 #>
 
-$requiredVersion ='0.10.1'
+$requiredVersion ='0.10.3'
 $LabilityMod = Get-Module -Name Lability -ListAvailable | Sort Version -Descending
 if (-Not $LabilityMod) {
    Write-Host -ForegroundColor Cyan "Installing Lability Module version $requiredVersion for the lab build"
